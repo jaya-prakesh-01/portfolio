@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,8 +10,7 @@
     <title>Jaya Sundar Prakash</title>
 
     <!-- CSS -->
- 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet"
@@ -33,16 +32,17 @@
     </div>
 
     <div class="menu">
-        <a href="#work">WORK</a>
+        <a href="#showreel">WORK</a>
         <a href="#showreel">SHOWREEL</a>
         <a href="#story">STORY</a>
         <a href="#skills">SKILLS</a>
         <a href="#contact">CONTACT</a>
     </div>
 
-    <button class="hire-btn">
+    <a href="mailto:prakashgunturu07@gmail.com?subject=Hiring Inquiry&body=Hello Jaya Sundar Prakash,%0D%0A%0D%0AI would like to discuss a project with you."
+    class="hire-btn">
         HIRE ME →
-    </button>
+    </a>
 
 </nav>
 
@@ -107,13 +107,13 @@
 
         <div class="hero-buttons">
 
-            <button class="btn-orange">
+            <a href="#showreel" class="btn-orange">
                 VIEW PORTFOLIO
-            </button>
+            </a>
 
-            <button class="btn-outline">
+            <a href="#contact" class="btn-outline">
                 GET IN TOUCH
-            </button>
+            </a>
 
         </div>
 
@@ -148,9 +148,9 @@
             eLearning agencies as a freelance senior designer.
         </p>
 
-        <button class="story-btn">
+        <a href="mailto:prakashgunturu07@gmail.com" class="story-btn">
             Work With Me
-        </button>
+        </a>
 
     </div>
 
@@ -193,7 +193,7 @@
                 <small>September 2016 — March 2025</small>
 
                 <h3>
-                    Visual Designer
+                    Assistant Manager, Visual Design
                 </h3>
 
                 <p>
@@ -323,7 +323,6 @@
             <ul>
                 <li>Adobe Photoshop</li>
                 <li>Adobe Illustrator</li>
-                
             </ul>
 
         </div>
@@ -416,10 +415,6 @@
                     persuasive visual storytelling for financial audiences.
                 </p>
 
-                <div class="video-tools">
-                 
-                </div>
-
             </div>
 
         </div>
@@ -451,11 +446,6 @@
                     Scientific process animation breaking down biogas production
                     into an engaging, accessible visual narrative.
                 </p>
-
-                <div class="video-tools">
-                   
-                 
-                </div>
 
             </div>
 
@@ -489,10 +479,6 @@
                     precision visual design for a regulated industry.
                 </p>
 
-                <div class="video-tools">
-                   
-                </div>
-
             </div>
 
         </div>
@@ -525,17 +511,13 @@
                     where artistic vision meets purposeful visual communication.
                 </p>
 
-                <div class="video-tools">
-                    
-                </div>
-
             </div>
 
         </div>
 
         <!-- VIDEO 5 -->
-<!-- 
-        <div class="video-card">
+
+        <!-- <div class="video-card">
 
             <a href="https://www.youtube.com/watch?v=I4w4ejgIPUY" target="_blank">
 
@@ -560,11 +542,6 @@
                     Pure motion design showcase — kinetic typography and
                     fluid transition work demonstrating After Effects mastery.
                 </p>
-
-                <div class="video-tools">
-                    <span>After Effects</span>
-                    <span>Premiere Pro</span>
-                </div>
 
             </div>
 
@@ -598,10 +575,6 @@
                     bold motion, precise timing, production-grade output.
                 </p>
 
-                <div class="video-tools">
-                    
-                </div>
-
             </div>
 
         </div>
@@ -634,10 +607,6 @@
                     of sustainable urban food production.
                 </p>
 
-                <div class="video-tools">
-                    
-                </div>
-
             </div>
 
         </div>
@@ -669,10 +638,6 @@
                     Immersive ecological scenario animation —
                     rich detail, atmospheric storytelling for environmental awareness.
                 </p>
-
-                <div class="video-tools">
-                 
-                </div>
 
             </div>
 
@@ -768,7 +733,9 @@
             Send a Message
         </h3>
 
-        <form>
+        <form action="mailto:prakashgunturu07@gmail.com"
+              method="post"
+              enctype="text/plain">
 
             <div class="input-box">
 
@@ -776,6 +743,7 @@
 
                 <input
                     type="text"
+                    name="name"
                     placeholder="Full name">
 
             </div>
@@ -786,6 +754,7 @@
 
                 <input
                     type="email"
+                    name="email"
                     placeholder="you@company.com">
 
             </div>
@@ -794,7 +763,7 @@
 
                 <label>Project Type</label>
 
-                <select>
+                <select name="project">
 
                     <option>
                         Select a project type…
@@ -825,6 +794,7 @@
                 <label>Message</label>
 
                 <textarea
+                    name="message"
                     placeholder="Tell me about your project..."></textarea>
 
             </div>
@@ -865,14 +835,32 @@
 
     <div class="footer-menu">
 
-        <a href="#">Work</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Story</a>
-        <a href="#">Contact</a>
+        <a href="#showreel">Work</a>
+        <a href="#showreel">Portfolio</a>
+        <a href="#story">Story</a>
+        <a href="#contact">Contact</a>
 
     </div>
 
 </footer>
 
+<script>
+
+window.addEventListener("scroll", function(){
+
+    const navbar = document.querySelector("nav");
+
+    if(window.scrollY > 80){
+        navbar.classList.add("scrolled");
+    }
+    else{
+        navbar.classList.remove("scrolled");
+    }
+
+});
+
+</script>
 </body>
-</html>
+</html> 
+
+<!-- SCRIPT PLACE BEFORE </body> -->
